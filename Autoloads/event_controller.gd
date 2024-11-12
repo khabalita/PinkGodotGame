@@ -1,3 +1,4 @@
+#Controladora de señales
 extends Node
 
 #transition
