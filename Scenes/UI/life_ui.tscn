@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnn3dq46n4fti"]
+
+[ext_resource type="Script" path="res://Scenes/UI/life_ui.gd" id="1_kimi1"]
+[ext_resource type="Texture2D" uid="uid://buod3gpg3n63f" path="res://Assets/Character/PinkEmpty.png" id="2_blxv4"]
+[ext_resource type="Texture2D" uid="uid://cxnaja2edrbhd" path="res://Assets/Character/pink.png" id="3_kqxqm"]
+
+[node name="LifeUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kimi1")
+
+[node name="Empty" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_blxv4")
+stretch_mode = 1
+
+[node name="Full" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_kqxqm")
+expand_mode = 1
+stretch_mode = 1

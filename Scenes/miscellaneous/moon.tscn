@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3icmu373wsdf"]
+
+[ext_resource type="Texture2D" uid="uid://lowpwr2y77qc" path="res://Assets/Moon2.png" id="1_xw8cc"]
+[ext_resource type="Script" path="res://Scenes/miscellaneous/moon.gd" id="2_810ef"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71l51"]
+radius = 5.0
+
+[node name="Moon" type="Sprite2D"]
+texture = ExtResource("1_xw8cc")
+script = ExtResource("2_810ef")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_71l51")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxogk6w1owhfc"]
+
+[ext_resource type="Script" path="res://Scenes/UI/menu_ui.gd" id="1_ll1nc"]
+[ext_resource type="Texture2D" uid="uid://cpqtek2gf3gf0" path="res://Assets/Background/menu1.jpg" id="2_j172j"]
+[ext_resource type="AudioStream" uid="uid://d1fpfvjxc0nj7" path="res://Assets/sounds/Dark Ambient.wav" id="3_du5vl"]
+
+[node name="MenuUi" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_ll1nc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(118, 59)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_j172j")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -509.0
+offset_top = 174.0
+offset_right = -439.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play
+"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_du5vl")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

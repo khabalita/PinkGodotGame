@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwd5hxb473vfg"]
+
+[ext_resource type="Script" path="res://Scenes/miscellaneous/life_controller.gd" id="1_56qei"]
+
+[node name="LifeController" type="Node"]
+script = ExtResource("1_56qei")
+max_life = 0.0
+life = 0.0

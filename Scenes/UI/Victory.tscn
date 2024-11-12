@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://pugglvsxgb2l"]
+
+[ext_resource type="Texture2D" uid="uid://brpoi3b6kmmhp" path="res://Assets/Background/background3.jpg" id="1_hu6im"]
+
+[node name="Victory" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(-69, -23)
+texture = ExtResource("1_hu6im")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -11.5
+offset_right = 31.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.252046, 0.598578, 0.812662, 1)
+theme_override_font_sizes/font_size = 33
+text = "End Game
+"
+
+[node name="message" type="Label" parent="."]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 75.0
+offset_right = 80.0
+offset_bottom = 98.0
+text = "Thank you for play!"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy7r1c5ewnjo0"]
+
+[ext_resource type="Script" path="res://Scenes/UI/moon_ui.gd" id="1_b2kfy"]
+[ext_resource type="Texture2D" uid="uid://lowpwr2y77qc" path="res://Assets/Moon2.png" id="2_lt0tk"]
+
+[node name="MoonUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 67.0
+offset_bottom = 38.0
+script = ExtResource("1_b2kfy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 39.0
+texture = ExtResource("2_lt0tk")
+
+[node name="Collected" type="Label" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 8.0
+offset_right = 66.0
+offset_bottom = 31.0
+text = "0"
+horizontal_alignment = 1
