@@ -1,10 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3icmu373wsdf"]
+[gd_scene load_steps=10 format=3 uid="uid://b3icmu373wsdf"]
 
 [ext_resource type="Texture2D" uid="uid://lowpwr2y77qc" path="res://Assets/Moon2.png" id="1_xw8cc"]
 [ext_resource type="Script" path="res://Scenes/miscellaneous/moon.gd" id="2_810ef"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_71l51"]
 radius = 5.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_la0qi"]
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_57m6g"]
+offsets = PackedFloat32Array(0.272727, 0.75974)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wcm10"]
+gradient = SubResource("Gradient_57m6g")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l584s"]
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_v50el"]
+offsets = PackedFloat32Array(0.237013, 0.707792)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o6xsv"]
+gradient = SubResource("Gradient_v50el")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Moon" type="Sprite2D"]
 texture = ExtResource("1_xw8cc")
@@ -14,5 +43,17 @@ script = ExtResource("2_810ef")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_71l51")
+
+[node name="Light" type="PointLight2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+material = SubResource("CanvasItemMaterial_la0qi")
+position = Vector2(0.5, 0.5)
+color = Color(0.433266, 0.433266, 0.433266, 1)
+texture = SubResource("GradientTexture2D_wcm10")
+
+[node name="Ilumination" type="Sprite2D" parent="Light"]
+modulate = Color(1, 1, 1, 0.392157)
+material = SubResource("CanvasItemMaterial_l584s")
+texture = SubResource("GradientTexture2D_o6xsv")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,10 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://byga047772xjd"]
+[gd_scene load_steps=10 format=3 uid="uid://byga047772xjd"]
 
 [ext_resource type="Script" path="res://Scenes/miscellaneous/black_hole.gd" id="1_i75kr"]
 [ext_resource type="Texture2D" uid="uid://d2y4bstg85wph" path="res://Assets/Black Hole.png" id="1_o1ylt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g6nk6"]
 radius = 15.2971
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mtblh"]
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_c0h6y"]
+offsets = PackedFloat32Array(0.185065, 0.779221)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qcndd"]
+gradient = SubResource("Gradient_c0h6y")
+width = 256
+height = 256
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g6jso"]
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_8oapt"]
+offsets = PackedFloat32Array(0.123377, 0.678571)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4yipf"]
+gradient = SubResource("Gradient_8oapt")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="BlackHole" type="Area2D"]
 script = ExtResource("1_i75kr")
@@ -15,5 +46,16 @@ texture = ExtResource("1_o1ylt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g6nk6")
+
+[node name="Light" type="PointLight2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+material = SubResource("CanvasItemMaterial_mtblh")
+texture = SubResource("GradientTexture2D_qcndd")
+
+[node name="Ilumination" type="Sprite2D" parent="Light"]
+modulate = Color(0.172549, 0.231373, 0.8, 0.392157)
+z_index = 10
+material = SubResource("CanvasItemMaterial_g6jso")
+texture = SubResource("GradientTexture2D_4yipf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
