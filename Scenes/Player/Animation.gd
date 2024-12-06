@@ -19,9 +19,9 @@ func update_animations(velocity: Vector2, is_on_floor: bool) -> void:
 
 func check_air_jump():
 	if movement.air_jump:
-		animated_sprite.play("double_jump")
-	else:
 		animated_sprite.play("jump")
+	else:
+		animated_sprite.play("double_jump")
 
 func check_is_facing_wall():
 	if movement.is_facing_wall():

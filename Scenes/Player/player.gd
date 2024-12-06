@@ -31,7 +31,7 @@ func flip():
 		is_facing_right = not is_facing_right
 
 func on_character_die():
-	print("die!")
+	get_tree().change_scene()
 
 func on_enemy_attacked(damage: float):
 	life_controller.take_damage(damage)
