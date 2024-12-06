@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlkfd1xplcpwf"]
+
+[ext_resource type="PackedScene" uid="uid://rfptpfs73hkw" path="res://Scenes/Enemy/enemy.tscn" id="1_10daw"]
+[ext_resource type="Script" path="res://Scenes/Enemy/meteor.gd" id="2_x5pn0"]
+[ext_resource type="Texture2D" uid="uid://c1pxhi7a4uiln" path="res://Assets/Enemy/Meteor.png" id="2_yr1pt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88018"]
+radius = 6.00471
+height = 63.9993
+
+[node name="Meteor" instance=ExtResource("1_10daw")]
+rotation = 2.26125
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_x5pn0")
+speed = 200.0
+diagonal_angle = 45.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_yr1pt")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(33, 0)
+rotation = -1.56602
+shape = SubResource("CapsuleShape2D_88018")
+
+[node name="Light" parent="." index="2"]
+position = Vector2(12.3045, 0.727235)
+scale = Vector2(1.52668, 0.179112)
+color = Color(0.360784, 0.207843, 0.0745098, 0.196078)
+
+[node name="Sprite2D" parent="Light" index="0"]
+modulate = Color(0.564706, 0.247059, 0.129412, 0.196078)
+position = Vector2(-17.0348, -5.18356)
+scale = Vector2(1.68197, 1)

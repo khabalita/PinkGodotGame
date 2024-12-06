@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://pugglvsxgb2l"]
 
-[ext_resource type="Texture2D" uid="uid://brpoi3b6kmmhp" path="res://Assets/Background/background3.jpg" id="1_hu6im"]
+[ext_resource type="Texture2D" uid="uid://brpoi3b6kmmhp" path="res://Assets/Background/background1.jpg" id="1_hu6im"]
 
 [node name="Victory" type="Control"]
 layout_mode = 3

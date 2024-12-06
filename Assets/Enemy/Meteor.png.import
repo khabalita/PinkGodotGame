@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqwn6i72tscvc"
-path="res://.godot/imported/background4.jpg-acda447d098f82a0d92388ee672fe726.ctex"
+uid="uid://c1pxhi7a4uiln"
+path="res://.godot/imported/Meteor.png-a805e8da8c0659a4d7c5b914df195703.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/background4.jpg"
-dest_files=["res://.godot/imported/background4.jpg-acda447d098f82a0d92388ee672fe726.ctex"]
+source_file="res://Assets/Enemy/Meteor.png"
+dest_files=["res://.godot/imported/Meteor.png-a805e8da8c0659a4d7c5b914df195703.ctex"]
 
 [params]
 

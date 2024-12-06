@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dixvimxhql83m"]
+
+[ext_resource type="PackedScene" uid="uid://rfptpfs73hkw" path="res://Scenes/Enemy/enemy.tscn" id="1_52otf"]
+[ext_resource type="Script" path="res://Scenes/Enemy/sattelite.gd" id="2_7e8ih"]
+
+[node name="Sattelite" instance=ExtResource("1_52otf")]
+script = ExtResource("2_7e8ih")
+speed = 150.0
+zigzag_amplitude = 50.0
+zigzag_speed = 3.0

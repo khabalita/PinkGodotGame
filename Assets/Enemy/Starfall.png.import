@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brpoi3b6kmmhp"
-path="res://.godot/imported/background1.jpg-f9ca9a77279eb00499df83af97dffdd6.ctex"
+uid="uid://brxseyqcd4jje"
+path="res://.godot/imported/Starfall.png-7a1f2a6c126a836b732c1da265e051cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/background1.jpg"
-dest_files=["res://.godot/imported/background1.jpg-f9ca9a77279eb00499df83af97dffdd6.ctex"]
+source_file="res://Assets/Enemy/Starfall.png"
+dest_files=["res://.godot/imported/Starfall.png-7a1f2a6c126a836b732c1da265e051cd.ctex"]
 
 [params]
 

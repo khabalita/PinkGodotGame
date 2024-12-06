@@ -1,24 +1,23 @@
-[gd_scene load_steps=6 format=4 uid="uid://kf4rtt0p6og5"]
+[gd_scene load_steps=5 format=4 uid="uid://kf4rtt0p6og5"]
 
 [ext_resource type="PackedScene" uid="uid://corltsoqttk6v" path="res://Scenes/World/world.tscn" id="1_8q58s"]
 [ext_resource type="PackedScene" uid="uid://b3icmu373wsdf" path="res://Scenes/miscellaneous/moon.tscn" id="2_hhrnn"]
-[ext_resource type="Texture2D" uid="uid://bqwn6i72tscvc" path="res://Assets/Background/background4.jpg" id="2_navpk"]
 [ext_resource type="PackedScene" uid="uid://pugglvsxgb2l" path="res://Scenes/UI/Victory.tscn" id="2_tdf7m"]
-[ext_resource type="PackedScene" uid="uid://rfptpfs73hkw" path="res://Scenes/Enemy/enemy.tscn" id="3_vyrsx"]
+[ext_resource type="Texture2D" uid="uid://bjcfeixwjg33h" path="res://Assets/Background/background2.jpg" id="3_j81vy"]
 
 [node name="LevelTwo" instance=ExtResource("1_8q58s")]
 next_level = ExtResource("2_tdf7m")
 
 [node name="Back" type="Sprite2D" parent="." index="0"]
-position = Vector2(641, 542)
+position = Vector2(700, 335)
 scale = Vector2(1.45417, 1.44537)
-texture = ExtResource("2_navpk")
+texture = ExtResource("3_j81vy")
 
 [node name="Player" parent="." index="1"]
 position = Vector2(18, 296)
 
 [node name="DirectionalLight2D" parent="Settings" index="1"]
-color = Color(0.513726, 0.584314, 0.909804, 1)
+color = Color(0.152739, 0.184533, 0.448194, 1)
 
 [node name="TileMapLayer" parent="." index="3"]
 position = Vector2(1, -1)
@@ -26,39 +25,6 @@ tile_map_data = PackedByteArray("AAD6/x4AAAAEABkAAAD7/x4AAAAEABkAAAD7/x0AAAAEABk
 
 [node name="BlackHole" parent="." index="4"]
 position = Vector2(456, 25)
-
-[node name="Asteroid" parent="asteroids" index="0"]
-position = Vector2(-179, 60)
-
-[node name="Asteroid2" parent="asteroids" index="1" instance=ExtResource("3_vyrsx")]
-position = Vector2(1222, 244)
-
-[node name="Asteroid3" parent="asteroids" index="2" instance=ExtResource("3_vyrsx")]
-position = Vector2(1003, 320)
-
-[node name="Asteroid4" parent="asteroids" index="3" instance=ExtResource("3_vyrsx")]
-position = Vector2(844, 380)
-
-[node name="Asteroid5" parent="asteroids" index="4" instance=ExtResource("3_vyrsx")]
-position = Vector2(143, 148)
-
-[node name="Asteroid6" parent="asteroids" index="5" instance=ExtResource("3_vyrsx")]
-position = Vector2(361, 259)
-
-[node name="Asteroid7" parent="asteroids" index="6" instance=ExtResource("3_vyrsx")]
-position = Vector2(649, 300)
-
-[node name="Asteroid8" parent="asteroids" index="7" instance=ExtResource("3_vyrsx")]
-position = Vector2(1129, 50)
-
-[node name="Asteroid9" parent="asteroids" index="8" instance=ExtResource("3_vyrsx")]
-position = Vector2(940, 144)
-
-[node name="Asteroid10" parent="asteroids" index="9" instance=ExtResource("3_vyrsx")]
-position = Vector2(694, 91)
-
-[node name="Asteroid11" parent="asteroids" index="10" instance=ExtResource("3_vyrsx")]
-position = Vector2(592, 21)
 
 [node name="Moon" parent="moons" index="0"]
 position = Vector2(224, 54)
@@ -68,3 +34,6 @@ position = Vector2(-367, 229)
 
 [node name="Moon3" parent="moons" index="2" instance=ExtResource("2_hhrnn")]
 position = Vector2(383, 150)
+
+[node name="Area2D" parent="." index="9"]
+position = Vector2(-259, -10)

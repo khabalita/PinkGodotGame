@@ -1,19 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://rfptpfs73hkw"]
+[gd_scene load_steps=8 format=3 uid="uid://rfptpfs73hkw"]
 
 [ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="1_ayvcm"]
-[ext_resource type="Texture2D" uid="uid://cmjpoym43dism" path="res://Assets/Enemy/Asteroid.png" id="1_fwurq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa35y"]
 radius = 13.0384
 
-[node name="Asteroid" type="Area2D"]
+[sub_resource type="Gradient" id="Gradient_p4egt"]
+offsets = PackedFloat32Array(0.27, 0.8)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a3l4a"]
+gradient = SubResource("Gradient_p4egt")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iwm8p"]
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_eut4u"]
+offsets = PackedFloat32Array(0.27, 0.88)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3cmm3"]
+gradient = SubResource("Gradient_eut4u")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Enemy" type="Area2D"]
+position = Vector2(4, -3)
 script = ExtResource("1_ayvcm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_fwurq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 3)
 shape = SubResource("CircleShape2D_wa35y")
+
+[node name="Light" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_a3l4a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Light"]
+modulate = Color(0.564706, 0.247059, 0.129412, 0.392157)
+material = SubResource("CanvasItemMaterial_iwm8p")
+texture = SubResource("GradientTexture2D_3cmm3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
