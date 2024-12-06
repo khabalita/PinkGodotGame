@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="1_ayvcm"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wa35y"]
-radius = 13.0384
-
 [sub_resource type="Gradient" id="Gradient_p4egt"]
 offsets = PackedFloat32Array(0.27, 0.8)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -28,15 +25,14 @@ use_hdr = true
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Enemy" type="Area2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa35y"]
+radius = 13.0384
+
+[node name="Enemy" type="Node2D"]
 position = Vector2(4, -3)
 script = ExtResource("1_ayvcm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 3)
-shape = SubResource("CircleShape2D_wa35y")
 
 [node name="Light" type="PointLight2D" parent="."]
 texture = SubResource("GradientTexture2D_a3l4a")
@@ -46,4 +42,8 @@ modulate = Color(0.564706, 0.247059, 0.129412, 0.392157)
 material = SubResource("CanvasItemMaterial_iwm8p")
 texture = SubResource("GradientTexture2D_3cmm3")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, 3)
+shape = SubResource("CircleShape2D_wa35y")

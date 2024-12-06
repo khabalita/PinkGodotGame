@@ -12,3 +12,6 @@ signal on_character_is_dead(parent)
 
 #moon
 signal moon_collected(value: int)
+
+#enemy
+signal enemy_attacked(damage)

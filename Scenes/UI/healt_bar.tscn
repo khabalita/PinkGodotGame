@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://5tetnop7a2cf"]
+
+[ext_resource type="Script" path="res://Scenes/UI/healt_bar.gd" id="1_wh4t4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2hmy"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_632oa"]
+bg_color = Color(0.93117, 0.346764, 0.689047, 1)
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wh4t4")
+
+[node name="LifeBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 23.0
+theme_override_styles/background = SubResource("StyleBoxFlat_b2hmy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_632oa")
+max_value = 20.0
+value = 20.0
+show_percentage = false

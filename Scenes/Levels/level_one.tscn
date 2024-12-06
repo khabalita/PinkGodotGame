@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://brpoi3b6kmmhp" path="res://Assets/Background/background1.jpg" id="2_jcvoy"]
 
 [node name="LevelOne" instance=ExtResource("1_suavn")]
+position = Vector2(2, 10)
 
 [node name="Back" type="Sprite2D" parent="." index="0"]
 position = Vector2(604, 473)
@@ -23,12 +24,6 @@ tile_map_data = PackedByteArray("AAADACAAAAAEABkAAAAEACAAAAAEABkAAAAEACEAAAAEABk
 [node name="BlackHole" parent="." index="4"]
 position = Vector2(847, 219)
 next_level = "res://Scenes/Levels/level_two.tscn"
-
-[node name="Meteor" parent="Enemies" index="0"]
-position = Vector2(-58, 341)
-
-[node name="Starfall" parent="Enemies" index="1"]
-position = Vector2(192, 251)
 
 [node name="Moon" parent="moons" index="0"]
 position = Vector2(561, 291)

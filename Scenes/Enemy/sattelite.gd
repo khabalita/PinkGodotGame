@@ -1,7 +1,6 @@
 extends Enemy
 class_name Sattelite
 
-@export var speed : float = 150
 @export var zigzag_amplitude : float = 50
 @export var zigzag_speed : float = 3
 

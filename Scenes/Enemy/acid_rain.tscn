@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4kectm6itj57"]
+
+[ext_resource type="PackedScene" uid="uid://rfptpfs73hkw" path="res://Scenes/Enemy/enemy.tscn" id="1_bjgmn"]
+[ext_resource type="Script" path="res://Scenes/Enemy/acid_rain.gd" id="2_di6fv"]
+
+[node name="AcidRain" instance=ExtResource("1_bjgmn")]
+script = ExtResource("2_di6fv")
+
+[node name="Sprite2D" parent="Light" index="0"]
+modulate = Color(0.130909, 0.412799, 0.314863, 0.392157)

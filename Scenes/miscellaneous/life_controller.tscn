@@ -4,5 +4,3 @@
 
 [node name="LifeController" type="Node"]
 script = ExtResource("1_56qei")
-max_life = 0.0
-life = 0.0

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ogspsvk7v0n"]
+
+[ext_resource type="PackedScene" uid="uid://rfptpfs73hkw" path="res://Scenes/Enemy/enemy.tscn" id="1_023wl"]
+[ext_resource type="Script" path="res://Scenes/Enemy/gamma_rays.gd" id="2_7veed"]
+
+[node name="GammaRays" instance=ExtResource("1_023wl")]
+script = ExtResource("2_7veed")
+
+[node name="Sprite2D" parent="Light" index="0"]
+modulate = Color(0.544167, 0.0333689, 0.123907, 0.392157)

@@ -26,6 +26,9 @@ tile_map_data = PackedByteArray("AAD6/x4AAAAEABkAAAD7/x4AAAAEABkAAAD7/x0AAAAEABk
 [node name="BlackHole" parent="." index="4"]
 position = Vector2(456, 25)
 
+[node name="Spawner" parent="." index="5"]
+spawn_interval = 0.5
+
 [node name="Moon" parent="moons" index="0"]
 position = Vector2(224, 54)
 

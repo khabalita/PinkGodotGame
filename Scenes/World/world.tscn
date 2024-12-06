@@ -1,13 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://corltsoqttk6v"]
+[gd_scene load_steps=13 format=3 uid="uid://corltsoqttk6v"]
 
 [ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_n3qgf"]
 [ext_resource type="PackedScene" uid="uid://dofp6fpqcwpiw" path="res://Scenes/Player/player.tscn" id="2_3b6mp"]
 [ext_resource type="PackedScene" uid="uid://byga047772xjd" path="res://Scenes/miscellaneous/black_hole.tscn" id="3_icj7u"]
-[ext_resource type="PackedScene" uid="uid://dlkfd1xplcpwf" path="res://Scenes/Enemy/meteor.tscn" id="5_7diqo"]
 [ext_resource type="PackedScene" uid="uid://b3icmu373wsdf" path="res://Scenes/miscellaneous/moon.tscn" id="5_g5xao"]
-[ext_resource type="PackedScene" uid="uid://dnn3dq46n4fti" path="res://Scenes/UI/life_ui.tscn" id="6_poa0t"]
-[ext_resource type="PackedScene" uid="uid://dywvwdgxjqcca" path="res://Scenes/Enemy/starfall.tscn" id="6_tcpbv"]
+[ext_resource type="Script" path="res://Scenes/Enemy/enemySpawner.gd" id="7_18v7d"]
 [ext_resource type="PackedScene" uid="uid://dy7r1c5ewnjo0" path="res://Scenes/UI/moon_ui.tscn" id="7_mgg8l"]
+[ext_resource type="PackedScene" uid="uid://5tetnop7a2cf" path="res://Scenes/UI/healt_bar.tscn" id="7_vsp16"]
 [ext_resource type="Texture2D" uid="uid://bprkw24vhhlfh" path="res://Assets/Tiles/tiles_patterns.png" id="8_e8flr"]
 [ext_resource type="Script" path="res://Scenes/World/area_2d.gd" id="9_xgbqi"]
 
@@ -850,13 +849,8 @@ tile_set = SubResource("TileSet_otxiu")
 [node name="BlackHole" parent="." instance=ExtResource("3_icj7u")]
 position = Vector2(-46, -87)
 
-[node name="Enemies" type="Node" parent="."]
-
-[node name="Meteor" parent="Enemies" instance=ExtResource("5_7diqo")]
-position = Vector2(127, -63)
-
-[node name="Starfall" parent="Enemies" instance=ExtResource("6_tcpbv")]
-position = Vector2(288, -86)
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("7_18v7d")
 
 [node name="moons" type="Node" parent="."]
 
@@ -865,7 +859,7 @@ position = Vector2(-51, -10)
 
 [node name="LifeUi" type="CanvasLayer" parent="."]
 
-[node name="LifeUi2" parent="LifeUi" instance=ExtResource("6_poa0t")]
+[node name="HealtBar" parent="LifeUi" instance=ExtResource("7_vsp16")]
 
 [node name="CollectedUI" type="CanvasLayer" parent="."]
 
